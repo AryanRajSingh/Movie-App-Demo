@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className='header'>
       <div className='container'>
-        <Link>
+        <Link to='/redux-movie-app'>
           <span>Movie App</span>
         </Link>
         <div className='user-img'>
