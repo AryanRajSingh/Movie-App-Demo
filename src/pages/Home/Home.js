@@ -8,8 +8,17 @@ const Home = () => {
   useEffect(() => {
     const movieText = 'Harry';
     const fetchMovies = async () => {
-      const response = movieApi.get(`?apikey=${APIKey}&s=${movieText}`);
+      try {
+        const response = movieApi.get(
+          `?apikey=${APIKey}&s=${movieText}&type=movie`
+        );
+        const data = await response;
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
     };
+    fetchMovies();
   }, []);
 
   return (
