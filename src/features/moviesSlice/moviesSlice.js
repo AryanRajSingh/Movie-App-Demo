@@ -2,8 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = { movies: {} };
 
-console.log(initialState.movies);
-
 const moviesSlice = createSlice({
   name: 'movies',
   initialState,
@@ -15,7 +13,7 @@ const moviesSlice = createSlice({
 });
 
 export const { addMovies } = moviesSlice.actions;
-export const getAllMovies = (state) => state.movies.movies;
+// export const getAllMovies = (state) => state.movies.movies;
 export default moviesSlice.reducer;
 
 /**
