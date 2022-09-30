@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import MovieCard from '../../components/MovieCard/MovieCard';
 
 const MovieList = () => {
-  const { Search: search } = useSelector((store) => store.movies.movies);
+  const { Search: movies } = useSelector((store) => store.movies.movies);
 
-  if (!search) {
+  if (!movies) {
     return (
       <section className='movie-list'>
         <p>No Movies Found</p>
@@ -15,9 +15,12 @@ const MovieList = () => {
 
   return (
     <section className='movie-list'>
-      {search.map((movie) => (
-        <MovieCard key={movie.imdbID} {...movie} />
-      ))}
+      <h2>Movies</h2>
+      <div className='box'>
+        {movies.map((movie) => (
+          <MovieCard key={movie.imdbID} {...movie} />
+        ))}
+      </div>
     </section>
   );
 };
