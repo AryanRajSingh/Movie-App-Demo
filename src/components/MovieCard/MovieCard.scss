@@ -3,6 +3,7 @@
 .movie-card {
   background: $secondary-color;
   cursor: pointer;
+  min-width: 220px;
   width: 220px;
 
   > figure {
