@@ -13,15 +13,11 @@ const Home = () => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      try {
-        const response = await movieApi.get(
-          `?apikey=${APIKey}&s=${movieText}&type=movie`
-        );
-        const data = await response.data;
-        dispatch(addMovies(data));
-      } catch (error) {
-        console.log(error);
-      }
+      const response = await movieApi.get(
+        `?apikey=${APIKey}&s=${movieText}&type=movie`
+      );
+      const data = await response.data;
+      dispatch(addMovies(data));
     };
     fetchMovies();
   }, []);

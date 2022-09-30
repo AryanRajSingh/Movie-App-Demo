@@ -4,14 +4,16 @@
   margin: 20px 0;
 
   > h2 {
+    text-align: center;
     color: $secondary-font;
     margin-bottom: 10px;
     font-weight: 400;
   }
 
   .box {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
   }
 }

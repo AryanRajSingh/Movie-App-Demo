@@ -24,7 +24,8 @@ button {
 }
 
 .container {
-  width: 1420px;
+  max-width: 1420px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 10px;
   box-sizing: border-box;
