@@ -32,7 +32,7 @@ const MovieList = () => {
       <section className='movie-list'>
         <h2>Shows</h2>
         <div className='box'>
-          {shows.map((movie) => (
+          {shows?.map((movie) => (
             <MovieCard key={movie.imdbID} {...movie} />
           ))}
         </div>
