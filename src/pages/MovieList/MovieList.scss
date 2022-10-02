@@ -3,6 +3,13 @@
 .movie-list {
   margin: 20px 0;
 
+  &--err {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   > h2 {
     text-align: center;
     color: $secondary-font;

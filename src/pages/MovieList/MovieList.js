@@ -3,13 +3,18 @@ import { useSelector } from 'react-redux';
 import MovieCard from '../../components/MovieCard/MovieCard';
 
 const MovieList = () => {
-  const { Search: movies } = useSelector((store) => store.movies.movies);
-  const { Search: shows } = useSelector((store) => store.movies.shows);
+  const { Search: movies } = useSelector((state) => state.movies.movies);
+  const { Search: shows } = useSelector((state) => state.movies.shows);
 
   if (!movies) {
     return (
-      <section className='movie-list'>
-        <p>No Movies Found</p>
+      <section className='movie-list movie-list--err'>
+        <div className='lds-ring'>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </section>
     );
   }
@@ -19,7 +24,7 @@ const MovieList = () => {
       <section className='movie-list'>
         <h2>Movies</h2>
         <div className='box'>
-          {movies.map((movie) => (
+          {movies?.map((movie) => (
             <MovieCard key={movie.imdbID} {...movie} />
           ))}
         </div>
