@@ -5,6 +5,12 @@
   cursor: pointer;
   min-width: 220px;
   width: 220px;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+  }
 
   > figure {
     height: 300px;
