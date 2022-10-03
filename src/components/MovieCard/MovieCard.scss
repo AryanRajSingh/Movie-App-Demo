@@ -2,10 +2,10 @@
 
 .movie-card {
   background: $secondary-color;
-  cursor: pointer;
   min-width: 220px;
   width: 220px;
   transition: all 0.3s;
+  height: 100%;
 
   &:hover {
     transform: scale(1.1);

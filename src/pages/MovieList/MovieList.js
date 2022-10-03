@@ -6,6 +6,8 @@ const MovieList = () => {
   const { Search: movies } = useSelector((state) => state.movies.movies);
   const { Search: shows } = useSelector((state) => state.movies.shows);
 
+  console.log(shows);
+
   if (!movies) {
     return (
       <section className='movie-list movie-loading'>

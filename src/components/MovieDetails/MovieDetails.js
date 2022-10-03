@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { fetchAsyncMovieOrShowDetail } from '../../features/moviesSlice/moviesSlice';
 import { removeSelectedMovieOrShow } from '../../features/moviesSlice/moviesSlice';
-
 import { FaCalendar, FaFilm, FaStar, FaThumbsUp } from 'react-icons/fa';
 
 const MovieDetails = () => {
@@ -22,7 +21,6 @@ const MovieDetails = () => {
     };
   }, [dispatch, movieId]);
 
-  console.log(selectedMovie, movieId);
   if (loading) {
     return (
       <section className='movie-detail movie-loading'>
