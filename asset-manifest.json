@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/redux-movie-app/static/css/main.6cbfffb2.css",
+    "main.js": "/redux-movie-app/static/js/main.1b995a75.js",
+    "static/media/user.png": "/redux-movie-app/static/media/user.109eb92014ac0b55efdf.png",
+    "index.html": "/redux-movie-app/index.html",
+    "main.6cbfffb2.css.map": "/redux-movie-app/static/css/main.6cbfffb2.css.map",
+    "main.1b995a75.js.map": "/redux-movie-app/static/js/main.1b995a75.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6cbfffb2.css",
+    "static/js/main.1b995a75.js"
+  ]
+}
