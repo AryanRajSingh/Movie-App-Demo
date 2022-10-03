@@ -16,6 +16,35 @@
       font-weight: 600;
     }
 
+    .searchbar {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+
+      form {
+        display: flex;
+        justify-content: center;
+        width: 70%;
+
+        > input {
+          width: 100%;
+          height: 38px;
+          outline: none;
+          font-size: 18px;
+          padding: 5px 5px 5px 10px;
+        }
+
+        > button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 8px;
+          font-size: 20px;
+          height: 38px;
+        }
+      }
+    }
+
     .user-img,
     .user-img img {
       width: 38px;

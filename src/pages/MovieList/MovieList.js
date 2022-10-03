@@ -3,7 +3,6 @@ import { Navigation, Autoplay, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector } from 'react-redux';
 import MovieCard from '../../components/MovieCard/MovieCard';
-import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,8 +10,6 @@ import 'swiper/css/navigation';
 const MovieList = () => {
   const { Search: movies } = useSelector((state) => state.movies.movies);
   const { Search: shows } = useSelector((state) => state.movies.shows);
-
-  console.log(shows);
 
   if (!movies) {
     return (
@@ -42,8 +39,6 @@ const MovieList = () => {
               disableOnInteraction: false,
             }}
             navigation
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
           >
             {movies?.map((movie) => (
               <SwiperSlide className='swiper-slide-movie' key={movie.imdbID}>
@@ -67,8 +62,6 @@ const MovieList = () => {
               disableOnInteraction: false,
             }}
             navigation
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
           >
             {shows?.map((movie) => (
               <SwiperSlide className='swiper-slide-movie' key={movie.imdbID}>
