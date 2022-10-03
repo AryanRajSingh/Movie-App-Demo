@@ -31,6 +31,24 @@ button {
   box-sizing: border-box;
 }
 
+.swiper-slide-movie {
+  width: 220px !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: #fff;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50%;
+
+  &::after {
+    font-size: 16px !important;
+    font-weight: 700;
+    color: $primary-color;
+  }
+}
+
 .movie-loading {
   height: 100vh;
   display: flex;

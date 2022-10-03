@@ -1,6 +1,12 @@
 import './MovieList.scss';
+import { Navigation, Autoplay, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector } from 'react-redux';
 import MovieCard from '../../components/MovieCard/MovieCard';
+import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const MovieList = () => {
   const { Search: movies } = useSelector((state) => state.movies.movies);
@@ -26,17 +32,50 @@ const MovieList = () => {
       <section className='movie-list'>
         <h2>Movies</h2>
         <div className='box'>
-          {movies?.map((movie) => (
-            <MovieCard key={movie.imdbID} {...movie} />
-          ))}
+          <Swiper
+            modules={[Navigation, Autoplay, A11y]}
+            spaceBetween={50}
+            slidesPerView={10}
+            loop={true}
+            autoplay={{
+              delay: 1400,
+              disableOnInteraction: false,
+            }}
+            navigation
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log('slide change')}
+          >
+            {movies?.map((movie) => (
+              <SwiperSlide className='swiper-slide-movie' key={movie.imdbID}>
+                <MovieCard {...movie} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
+
       <section className='movie-list'>
         <h2>Shows</h2>
         <div className='box'>
-          {shows?.map((movie) => (
-            <MovieCard key={movie.imdbID} {...movie} />
-          ))}
+          <Swiper
+            modules={[Navigation, Autoplay, A11y]}
+            spaceBetween={50}
+            slidesPerView={10}
+            loop={true}
+            autoplay={{
+              delay: 1400,
+              disableOnInteraction: false,
+            }}
+            navigation
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log('slide change')}
+          >
+            {shows?.map((movie) => (
+              <SwiperSlide className='swiper-slide-movie' key={movie.imdbID}>
+                <MovieCard {...movie} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
     </>
