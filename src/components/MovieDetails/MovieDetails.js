@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { fetchAsyncMovieOrShowDetail } from '../../features/moviesSlice/moviesSlice';
+import { removeSelectedMovieOrShow } from '../../features/moviesSlice/moviesSlice';
 
 import { FaCalendar, FaFilm, FaStar, FaThumbsUp } from 'react-icons/fa';
 
@@ -16,12 +17,15 @@ const MovieDetails = () => {
   useEffect(() => {
     dispatch(fetchAsyncMovieOrShowDetail(movieId));
     setLoading(false);
+    return () => {
+      dispatch(removeSelectedMovieOrShow());
+    };
   }, [dispatch, movieId]);
 
   console.log(selectedMovie, movieId);
   if (loading) {
     return (
-      <section className='movie-detail'>
+      <section className='movie-detail movie-loading'>
         <div className='lds-ring'>
           <div></div>
           <div></div>
@@ -55,20 +59,16 @@ const MovieDetails = () => {
             <h2>{title}</h2>
             <div className='movie-section__left__info-top'>
               <span>
-                IMDB Rating
-                <FaStar /> : {rating}
+                IMDB Rating <FaStar className='icon-star' /> : {rating}
               </span>
               <span>
-                IMDB Votes
-                <FaThumbsUp />: {votes}
+                IMDB Votes <FaThumbsUp />: {votes}
               </span>
               <span>
-                IMDB Votes
-                <FaFilm /> : {runtime}
+                IMDB Runtime <FaFilm /> : {runtime}
               </span>
               <span>
-                IMDB Votes
-                <FaCalendar /> : {year}
+                IMDB Year <FaCalendar /> : {year}
               </span>
             </div>
             <p>{plot}</p>

@@ -8,7 +8,7 @@ const MovieList = () => {
 
   if (!movies) {
     return (
-      <section className='movie-list movie-list--err'>
+      <section className='movie-list movie-loading'>
         <div className='lds-ring'>
           <div></div>
           <div></div>

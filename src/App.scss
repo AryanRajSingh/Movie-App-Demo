@@ -31,6 +31,13 @@ button {
   box-sizing: border-box;
 }
 
+.movie-loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .lds-ring {
   display: inline-block;
   position: relative;
