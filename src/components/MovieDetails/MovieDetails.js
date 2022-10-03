@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { fetchAsyncMovieOrShowDetail } from '../../features/moviesSlice/moviesSlice';
 
+import { FaCalendar, FaFilm, FaStar, FaThumbsUp } from 'react-icons/fa';
+
 const MovieDetails = () => {
   const [loading, setLoading] = useState(true);
   const { movieId } = useParams();
@@ -30,12 +32,73 @@ const MovieDetails = () => {
     );
   }
 
-  // const { Title: title } = selectedMovie;
+  const {
+    Title: title,
+    Actors: actors,
+    Director: director,
+    Year: year,
+    imdbVotes: votes,
+    imdbRating: rating,
+    Runtime: runtime,
+    Awards: awards,
+    Genre: genre,
+    Language: lang,
+    Plot: plot,
+    Poster: poster,
+  } = selectedMovie;
 
   return (
     <section className='movie-detail'>
       <div className='container'>
-        <div className='movie-detail__card'>{}</div>
+        <div className='movie-section'>
+          <div className='movie-section__left'>
+            <h2>{title}</h2>
+            <div className='movie-section__left__info-top'>
+              <span>
+                IMDB Rating
+                <FaStar /> : {rating}
+              </span>
+              <span>
+                IMDB Votes
+                <FaThumbsUp />: {votes}
+              </span>
+              <span>
+                IMDB Votes
+                <FaFilm /> : {runtime}
+              </span>
+              <span>
+                IMDB Votes
+                <FaCalendar /> : {year}
+              </span>
+            </div>
+            <p>{plot}</p>
+            <div className='movie-section__left__info-bottom'>
+              <div>
+                <span>Director</span>
+                <span>{director}</span>
+              </div>
+              <div>
+                <span>Stars</span>
+                <span>{actors}</span>
+              </div>
+              <div>
+                <span>Genres</span>
+                <span>{genre}</span>
+              </div>
+              <div>
+                <span>Language</span>
+                <span>{lang}</span>
+              </div>
+              <div>
+                <span>Awards</span>
+                <span>{awards}</span>
+              </div>
+            </div>
+          </div>
+          <figure className='movie-section__right'>
+            <img src={poster} alt={title} />
+          </figure>
+        </div>
       </div>
     </section>
   );
