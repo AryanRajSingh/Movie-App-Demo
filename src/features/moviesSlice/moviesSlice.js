@@ -45,22 +45,16 @@ const moviesSlice = createSlice({
   },
 
   extraReducers: {
-    [fetchAsyncMovies.pending]: () => {
-      console.log('Pending');
-    },
     [fetchAsyncMovies.fulfilled]: (state, { payload }) => {
-      console.log('Fetched Successfully');
       return { ...state, movies: payload };
     },
     [fetchAsyncMovies.rejected]: () => {
       console.log('Rejected');
     },
     [fetchAsyncShows.fulfilled]: (state, { payload }) => {
-      console.log('Fetched Successfully');
       return { ...state, shows: payload };
     },
     [fetchAsyncMovieOrShowDetail.fulfilled]: (state, { payload }) => {
-      console.log('Fetched Successfully');
       return { ...state, selectMovieOrShow: payload };
     },
   },
@@ -69,7 +63,3 @@ const moviesSlice = createSlice({
 export const { addMovies, removeSelectedMovieOrShow } = moviesSlice.actions;
 // export const getAllMovies = (state) => state.movies.movies;
 export default moviesSlice.reducer;
-
-/**
- ** payload action'dan geliyor o yüzden destructure debiliyoruz.
- */
